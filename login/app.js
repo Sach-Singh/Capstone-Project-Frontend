@@ -8,7 +8,7 @@ form.addEventListener('submit', async (event) => {
   const password = document.querySelector('#password').value;
 
   try {
-    const response = await axios.post('http://localhost:8080/login', {
+    const response = await axios.post('http://localhost:8080/users/login', {
       email,
       password
     });

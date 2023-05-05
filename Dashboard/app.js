@@ -1,0 +1,18 @@
+const financesTable = document.getElementById('finances').getElementsByTagName('tbody')[0];
+
+fetch('http://localhost:8080/finance/user-finances')
+  .then(response => response.json())
+  .then(data => {
+    for (let finance of data.bd) {
+      const financeRow = financesTable.insertRow();
+      financeRow.insertCell().textContent = finance.id;
+      financeRow.insertCell().textContent = finance.financeType;
+      financeRow.insertCell().textContent = finance.tag;
+      financeRow.insertCell().textContent = finance.invDt;
+      financeRow.insertCell().textContent = finance.amt;
+    //   financeRow.insertCell().textContent = finance.userDto.id;
+    //   financeRow.insertCell().textContent = finance.userDto.name;
+    //   financeRow.insertCell().textContent = finance.userDto.email;
+    }
+  })
+  .catch(error => console.error(error));

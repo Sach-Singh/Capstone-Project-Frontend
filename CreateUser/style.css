@@ -1,5 +1,7 @@
-body {
+/* body {
+
     font-family: Arial, sans-serif;
+    text-align: center;
   }
   
   form {
@@ -18,16 +20,39 @@ body {
     padding: 5px;
   }
   
-  button {
+  */ button {
+    display: block;
+    width: 100%;
     padding: 5px 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+    margin-top: 10px;
+  } /*
   
   button:hover {
     background-color: #3e8e41;
+  } */
+  
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  form {
+    margin-right: 20px; /* Optional: Add some spacing between the form and the logo */
+  }
+  
+  label, input, button {
+    display: block;
+    width: 100%;
+  }
+  
+  
+  #image {
+    inline: size 5px;;
   }
   

@@ -2,40 +2,67 @@
 <html>
 <head>
 	<title>Dashboard</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<a href="D:\Capstone Project\Capstone-Project-Frontend\Dashboard\index.html"><img src="D:\Capstone Project\logo.png" alt="Logo" class="logo"></a>
-<h2>THIS IS TOTAL INCOME PART</h2>
-<h1>Finance Table</h1>
 <body>
-  <h1>Finances</h1>
-  <table id="finances">
-    <thead>
-	</thead>
-		<tbody>
-      <tr>
-        <th>ID</th>
-        <th>Finance Type</th>
-        <th>Tag</th>
-        <th>Invoice Date</th>
-        <th>Amount</th>
-      </tr>
-    </tbody>
-  </table>
-			</div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">  
+      <a class="navbar-brand" href="D:\Capstone Project\Capstone-Project-Frontend\Dashboard\index.html"><img src="D:\Capstone Project\logo.png" alt="Logo" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          <a class="nav-link" href="D:\Capstone Project\Capstone-Project-Frontend\FinanceManagement\index.html">Finance Entry</a>
+          <a class="nav-link" href="#">About Us</a>
+          <a class="nav-link" href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <section class="grid">
+			<h1>Finances</h1>
+			<table id="finances">
+			  <thead>
+			  </thead>
+				  <tbody>
+				<tr>
+				  <th>ID</th>
+				  <th>Finance Type</th>
+				  <th>Tag</th>
+				  <th>Invoice Date</th>
+				  <th>Amount</th>
+				</tr>
+			  </tbody>
+			</table>
+        </section>
+      </div>
+      <div class="col-sm-6">
+        <section class="grid">
+			<div class="chart-container">
+				<canvas id="donut-chart"></canvas>
+			</div>       
 		</section>
-		<section class="grid">
-			<h2>Grid 2</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor elit at justo accumsan, eu fermentum lorem consectetur. Vivamus in tortor a tellus blandit vestibulum.</p>
-		</section>
-		<section class="grid">
-			<h2>Grid 3</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor elit at justo accumsan, eu fermentum lorem consectetur. Vivamus in tortor a tellus blandit vestibulum.</p>
-		</section>
-		<section class="grid">
-			<h2>Grid 4</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor elit at justo accumsan, eu fermentum lorem consectetur. Vivamus in tortor a tellus blandit vestibulum.</p>
-		</section>
+      </div>
+      <div class="col-sm-6">
+        <section class="grid">
+          <h2>Grid 3</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor elit at justo accumsan, eu fermentum lorem consectetur. Vivamus in tortor a tellus blandit vestibulum.</p>
+        </section>
+      </div>
+      <div class="col-sm-6">
+        <section class="grid">
+          <h2>Grid 4</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor elit at justo accumsan, eu fermentum lorem consectetur. Vivamus in tortor a tellus blandit vestibulum.</p>
+        </section>
+      </div>
+    </div>
 	</main>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="app.js"></script>

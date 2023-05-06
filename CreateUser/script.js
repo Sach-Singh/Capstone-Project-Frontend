@@ -12,7 +12,7 @@ function createUser(event) {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
-  // Basic client-side form validation
+  //validation
   if (name === '') {
     showError(nameInput, 'Name is required');
     return;
@@ -40,6 +40,8 @@ function createUser(event) {
     .then(response => {
       console.log(response.data);
       alert('User created successfully!');
+      window.location.href = 'file:///D:/Capstone%20Project/Capstone-Project-Frontend/login/index.html';
+      
       form.reset();
     })
     .catch(error => {

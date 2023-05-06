@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <title>Login Screen</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Login</h1>
-    <form>
-      <p>Not a User already<a href="D:\Capstone Project\Capstone-Project-Frontend\CreateUser\index.html">Sign Up</a></p>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      <p><a href="D:\Capstone Project\Capstone-Project-Frontend\ForgotPassword\index.html">Forgot Password</a></p>
-      <br>
-      <button type="submit" id="login-btn">Login</button>
-    </form>
+    <a href="D:\Capstone Project\Capstone-Project-Frontend\Dashboard\index.html"><img src="D:\Capstone Project\logo.png" alt="Logo" class="logo"></a>
+  
+    <h2 class="heading">Allied Personal Finance Tracker</h2>
+    <div class="container">
+      <form class="col-md-3">
+        <h1>Login</h1>
+        <p>Not a User already<a href="D:\Capstone Project\Capstone-Project-Frontend\CreateUser\index.html">Sign Up</a></p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <p><a href="D:\Capstone Project\Capstone-Project-Frontend\ForgotPassword\index.html">Forgot Password</a></p>
+        <br>
+        <button type="submit" id="login-btn">Login</button>
+      </form>
+      <img src="D:\Capstone Project\kumbh-kalash.png" alt="Logo" class="img-fluid">
+    </div>
     <div id="login-status"></div>
-
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
   </body>
-</html>
+  
+

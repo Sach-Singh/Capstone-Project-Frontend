@@ -1,3 +1,13 @@
+.logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5%;
+	background-color: rgb(235, 191, 191);
+  }
+  
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -36,8 +46,7 @@ main {
 	grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   position: absolute;
-	grid-template-rows: 1fr;
-	grid-gap: 1rem;
+grid-gap: 1rem;
 	padding: 2rem;
   top: 50px;
   right: 0;

@@ -1,3 +1,13 @@
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5%;
+  background-color: rgb(235, 191, 191);
+}
+
+
+
 /* body {
 
     font-family: Arial, sans-serif;
@@ -19,6 +29,22 @@
     margin-bottom: 10px;
     padding: 5px;
   }
+
+  .row {
+  display: flex;
+  align-items: center;
+}
+
+form {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+img {
+  flex: 1;
+  max-width: 25%;
+}
+
   
   */ button {
     display: block;
@@ -35,16 +61,40 @@
   button:hover {
     background-color: #3e8e41;
   } */
-  
+  .display-4{
+    background-color: bisque;
+    align-items: center;
+  }
   .form-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(112, 71, 16);
+  }
+  
+  .card-body{
+    background-color: rgb(198, 240, 205);
+  }
+  .row {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    height: 50%;
+    width: 100%;
   }
   
   form {
-    margin-right: 20px; /* Optional: Add some spacing between the form and the logo */
+    flex: 1;
+    margin-right: 2rem;
   }
+  
+  img {
+    flex: 2;
+    max-width: 25%;
+    top: 25%;
+
+  }
+  
   
   label, input, button {
     display: block;
@@ -52,7 +102,7 @@
   }
   
   
-  #image {
-    inline: size 5px;;
-  }
+ #signup-btn{
+  padding: auto;
+ }
   

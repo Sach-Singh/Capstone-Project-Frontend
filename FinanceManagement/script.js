@@ -1,24 +1,24 @@
-const financesTable = document.getElementById('finances').getElementsByTagName('tbody')[0];
+// const financesTable = document.getElementById('finances').getElementsByTagName('tbody')[0];
 
+// //   .catch(error => console.error(error));
+
+
+//   axios.get('http://localhost:8080/finance/user-finances')
+//   .then(response => {
+//     const data = response.data;
+//     for (let finance of data.bd) {
+//       const financeRow = financesTable.insertRow();
+//       financeRow.insertCell().textContent = finance.id;
+//       financeRow.insertCell().textContent = finance.financeType;
+//       financeRow.insertCell().textContent = finance.tag;
+//       financeRow.insertCell().textContent = finance.invDt;
+//       financeRow.insertCell().textContent = finance.amt;
+//       // financeRow.insertCell().textContent = finance.userDto.id;
+//       // financeRow.insertCell().textContent = finance.userDto.name;
+//       // financeRow.insertCell().textContent = finance.userDto.email;
+//     }
+//   })
 //   .catch(error => console.error(error));
-
-
-  axios.get('http://localhost:8080/finance/user-finances')
-  .then(response => {
-    const data = response.data;
-    for (let finance of data.bd) {
-      const financeRow = financesTable.insertRow();
-      financeRow.insertCell().textContent = finance.id;
-      financeRow.insertCell().textContent = finance.financeType;
-      financeRow.insertCell().textContent = finance.tag;
-      financeRow.insertCell().textContent = finance.invDt;
-      financeRow.insertCell().textContent = finance.amt;
-      // financeRow.insertCell().textContent = finance.userDto.id;
-      // financeRow.insertCell().textContent = finance.userDto.name;
-      // financeRow.insertCell().textContent = finance.userDto.email;
-    }
-  })
-  .catch(error => console.error(error));
 
 
 
@@ -29,14 +29,14 @@ const result = document.querySelector('#result');
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
-	const userId = document.querySelector('#userId').value;
+	// const userId = document.querySelector('#userId').value;
 	const financeType = document.querySelector('#financeType').value;
 	const tag = document.querySelector('#tag').value;
 	const invDt = document.querySelector('#invDt').value;
 	const amt = document.querySelector('#amt').value;
 
 	axios.post('http://localhost:8080/finance/user', {
-		userId: userId,
+		userId: `1`,
 		financeType: financeType,
 		tag: tag,
 		invDt: invDt,
@@ -54,7 +54,7 @@ form.addEventListener('submit', (e) => {
 
 function submitForm(event) {
     event.preventDefault();
-    const userId = document.getElementById('userId').value;
+    const userId = document.getElementById(1).value;
     const financeType = document.getElementById('financeType').value;
     const tag = document.getElementById('tag').value;
     const invDt = document.getElementById('invDt').value;

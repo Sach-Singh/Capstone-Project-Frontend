@@ -1,3 +1,31 @@
+const financesTable = document.getElementById('tableInvoice').getElementsByTagName('tbody')[0];
+
+//   .catch(error => console.error(error));
+
+
+  axios.get('http://localhost:8080/finance/user-finances')
+  .then(response => {
+    const data = response.data;
+    for (let finance of data.bd) {
+      const financeRow = financesTable.insertRow();
+      financeRow.insertCell().textContent = finance.id;
+      financeRow.insertCell().textContent = finance.financeType;
+      financeRow.insertCell().textContent = finance.tag;
+      financeRow.insertCell().textContent = finance.invDt;
+      financeRow.insertCell().textContent = finance.amt;
+      // financeRow.insertCell().textContent = finance.userDto.id;
+      // financeRow.insertCell().textContent = finance.userDto.name;
+      // financeRow.insertCell().textContent = finance.userDto.email;
+    }
+  })
+  .catch(error => console.error(error));
+
+
+
+
+
+
+
 function setupTable() {
     const table = document.getElementById('tableInvoice')
 
@@ -28,14 +56,14 @@ function propulateActualData(table, invoices) {
 
     for(const invoice of invoices) {
 
-        const { id, client, invDt, amt } = invoice
+        const { id, financeType, tag, invDt , Amount } = invoice
         const updatePageUrl = `./update-invoice.html?id=${id}`
         const viewPageUrl = `./view-invoice.html?id=${id}`
 
         const row = table.insertRow()
         row.insertCell(0).innerHTML = id
-        row.insertCell(1).innerHTML = client
-        row.insertCell(2).innerHTML = amt
+        row.insertCell(1).innerHTML = financeType
+        row.insertCell(2).innerHTML = tag
         row.insertCell(3).innerHTML = invDt
         row.insertCell(4).innerHTML = `
             <a href='${viewPageUrl}'>View</a> 
@@ -58,7 +86,7 @@ function showConfirmDeleteModal(id) {
 }
 
 function apiFetchAllInvoices(table) {
-    axios.get('http://localhost:8080/invoice/')
+    axios.get('http://localhost:8080/finance/user-finances')
         .then(res => {
             const { data } = res
             console.log(data)  
@@ -70,7 +98,7 @@ function apiFetchAllInvoices(table) {
 }
 
 function apiFetchAllCustomerInvoices(table, id) {
-    const url = `http://localhost:8080/invoice/customer/${id}`
+    const url = `http://localhost:8080/finance/user/{id}`
     axios.get(url)
         .then(res => {
             const { data } = res

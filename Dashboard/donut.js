@@ -1,24 +1,3 @@
-const financesTable = document.getElementById('finances').getElementsByTagName('tbody')[0];
-
-
-
-  axios.get('http://localhost:8080/finance/user-finances')
-  .then(response => {
-    const data = response.data;
-    for (let finance of data.bd) {
-      const financeRow = financesTable.insertRow();
-      financeRow.insertCell().textContent = finance.id;
-      financeRow.insertCell().textContent = finance.financeType;
-      financeRow.insertCell().textContent = finance.tag;
-      financeRow.insertCell().textContent = finance.invDt;
-      financeRow.insertCell().textContent = finance.amt;
-      // financeRow.insertCell().textContent = finance.userDto.id;
-      // financeRow.insertCell().textContent = finance.userDto.name;
-      // financeRow.insertCell().textContent = finance.userDto.email;
-    }
-  })
-  .catch(error => console.error(error));
-
 
 const incomeEndpoint = 'http://localhost:8080/finance/total-income';
 const expensesEndpoint = 'http://localhost:8080/finance/total-expenses';
@@ -41,13 +20,16 @@ axios.all([
       labels: ['Income', 'Expenses'],
       datasets: [{
         data: [income, expenses],
-        backgroundColor: ['#36A2EB', '#FF6384'],
-        borderWidth: 2
+        backgroundColor: ['#91e8d9', '#d75b5b'],
+        borderWidth: 1,
+        borderColor: 'black',
+
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false
+      
     }
   });
 })).catch(error => {

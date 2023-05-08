@@ -5,10 +5,7 @@
   height: 5%;
   background-color: rgb(235, 191, 191);
 } */
-.logo {
-  max-width: 100px;
-  margin-bottom: 20px;
-}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -42,13 +39,19 @@ h1 {
   margin-bottom: 20px;
 }
 
-
+.logo {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
 
 
 body {
     font-family: Arial, sans-serif;
   }
   
+  h1 {
+    text-align: center;
+  }
   
   form {
     display: flex;

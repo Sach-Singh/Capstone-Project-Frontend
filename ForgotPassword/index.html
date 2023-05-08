@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    
+    <meta charset="UTF-8">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
   <body>
-    <div> <a href="D:\Capstone Project\Capstone-Project-Frontend\Dashboard\index.html"><img src="D:\Capstone Project\logo.png" alt="Logo" class="logo"></a></div>
+    <a href="D:\Capstone Project\Capstone-Project-Frontend\Dashboard\index.html"><img src="D:\Capstone Project\logo.png" alt="Logo" class="logo"></a>
+  
+    <h2 class="heading">Allied Personal Finance Tracker</h2>
+    
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-         
-          <h1>Forgot Password</h1>
-          <p>Enter your email address below to reset your password:</p>
-          <form onsubmit="sendResetLink(event)">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required class="input-group-text" >
-            <button type="submit">Reset Password</button>
-          </form>
-        </div>
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
-          <img src="D:\Capstone Project\kumbh-kalash.png" alt="Logo" class="img-fluid">
-        </div>
-      </div>
+      <form class="col-md-3">
+        <h1>Login</h1>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <button type="submit" id="login-btn">Send Reset Link</button>
+      </form>
+      <img src="D:\Capstone Project\kumbh-kalash.png" alt="Logo" class="img-fluid">
     </div>
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <div id="login-status"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
   </body>
-</html>
+</html>  
+
+
 

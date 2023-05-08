@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Dashboard</title>
 	<link rel="stylesheet" href="style.css">
@@ -7,39 +7,117 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light btn-primary bg-primary sticky-top">
     <div class="container-fluid">  
-      <a class="navbar-brand" href="D:\Capstone Project\Capstone-Project-Frontend\Dashboard\index.html"><img src="D:\Capstone Project\logo.png" alt="Logo" class="logo"></a>
+      <a class="navbar-brand bg-body-tertiary" href="D:\Capstone Project\Capstone-Project-Frontend\Dashboard\index.html"><img src="D:\Capstone Project\logo.png" alt="Logo" class="logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-          <a class="nav-link" href="D:\Capstone Project\Capstone-Project-Frontend\FinanceManagement\index.html">Finance Entry</a>
-          <a class="nav-link" href="#">About Us</a>
-          <a class="nav-link" href="#">Contact</a>
+          <a type="button" class="nav-link active " aria-current="page" href="#">Dashboard</a>
+          <button type="button" class="btn nav-link" data-toggle="modal" data-target="#myModal">
+            Enter Finance
+          </button>
+          <a class="nav-link" href="file:///D:/Capstone%20Project/Capstone-Project-Frontend/AboutUs/index.html">About Us</a>
+          <a class="nav-link" href="file:///D:/Capstone%20Project/Capstone-Project-Frontend/login/index.html">log Out</a>
         </div>
       </div>
     </div>
   </nav>
+  <div>
+	<!-- The Modal -->
+
+  <span class="container">
+	<div class="modal modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Enter Finance</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="container">
+						<h1>Finance App</h1>
+						<form id="finance-form">
+							<label for="financeType">Finance Type:</label>
+							<select id="financeType" name="financeType" required>
+								<option value="">Select</option>
+								<option value="INCOME">Income</option>
+								<option value="EXPENSES">Expenses</option>
+							</select><br><br>
+							<label for="tag">Tag:</label>
+							<select id="tag" name="tag" required>
+								<option value="">Select Category</option>
+								<!-- Categories for Income -->
+								<option value="Salary" class="income-option">Salary</option>
+								<option value="Investments" class="income-option">Investments</option>
+								<option value="Bonus" class="income-option">Bonus</option>
+								<!-- Categories for Expenses -->
+								<option value="Food" class="expenses-option">Food</option>
+								<option value="Rent" class="expenses-option">Rent</option>
+								<option value="Utilities" class="expenses-option">Utilities</option>
+							</select><br><br>
+							<label for="invDt">Date:</label>
+							<input type="date" id="invDt" name="invDt" required><br><br>
+							<label for="amt">Amount:</label>
+							<input type="number" id="amt" name="amt" required><br><br>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+					<button  class="btn btn-primary" type="submit" id="submit-btn">Add Finance Info</button>
+				</div>
+            </form>
+						<div id="result"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-14">
         <section class="grid">
 			<h1>Finances</h1>
-			<table id="finances">
-			  <thead>
-			  </thead>
-				  <tbody>
-				<tr>
-				  <th>ID</th>
-				  <th>Finance Type</th>
-				  <th>Tag</th>
-				  <th>Invoice Date</th>
-				  <th>Amount</th>
-				</tr>
-			  </tbody>
+          <div class="row mt-3">
+            <table class="table table-bordered table-container" id="tableInvoice">
+              <thead>
+                <tr>
+                  <th> Id</th>
+                  <th >Finance Type</th>
+                  <th>Tag</th>
+                  <th>Date</th>
+                  <th>Amount(₹)</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>      
+          </div>
+        </div>
+      <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm </h5>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+              <div class="modal-body">
+                Do You Really Want To Delete ?
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                <button type="button" class="btn btn-danger" id="btDl">Delete It</button>
+              </div>
+            </div>
+          </div>
+        </div>
 			</table>
         </section>
       </div>
@@ -51,21 +129,16 @@
 			</div>       
 		</section>
       </div>
-      <div class="col-sm-6">
-        <section class="grid">
-          <h2>Grid 3</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor elit at justo accumsan, eu fermentum lorem consectetur. Vivamus in tortor a tellus blandit vestibulum.</p>
-        </section>
-      </div>
-      <div class="col-sm-6">
-        <section class="grid">
-          <h2>Grid 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor elit at justo accumsan, eu fermentum lorem consectetur. Vivamus in tortor a tellus blandit vestibulum.</p>
-        </section>
-      </div>
     </div>
+  </span>
 	</main>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="app.js"></script>
+<script src="donut.js"></script>
+<script src="script.js"></script>
+
+<script src="financeEntry.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

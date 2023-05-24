@@ -17,7 +17,9 @@ form.addEventListener('submit', (e) => {
 		invDt: invDt,
 		amt: amt
 	})
+
 	.then(res => {
+		console.log(res);
 		result.textContent = 'Finance Info Added!';
         alert('Finance added successfully!');
         location.reload();
@@ -28,4 +30,26 @@ form.addEventListener('submit', (e) => {
 	})
 });
 
+
+
+const financeTypeSelect = document.getElementById('financeType');
+const tagSelect = document.getElementById('tag');
+
+financeTypeSelect.addEventListener('change', () => {
+  if (financeTypeSelect.value === 'INCOME') {
+    tagSelect.innerHTML = `
+      <option value="">Select Category</option>
+      <option value="Salary" class="income-option">Salary</option>
+      <option value="Investments" class="income-option">Investments</option>
+      <option value="Bonus" class="income-option">Bonus</option>
+    `;
+  } else if (financeTypeSelect.value === 'EXPENSES') {
+    tagSelect.innerHTML = `
+      <option value="">Select Category</option>
+      <option value="Food" class="expenses-option">Food</option>
+      <option value="Rent" class="expenses-option">Rent</option>
+      <option value="Utilities" class="expenses-option">Utilities</option>
+    `;
+  }
+});
 

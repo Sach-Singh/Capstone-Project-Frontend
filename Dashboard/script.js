@@ -1,19 +1,12 @@
 function setupTable() {
     const table = document.getElementById('tableInvoice')
 
-    // const btnSearch = document.getElementById('btnSearch')
-    
-    // btnSearch.onclick = () =>   {
-
-    //     apiFetchAllCustomerInvoices(table, document.getElementById('txtClient').value )
-    // }
 
     apiFetchAllInvoices(table)
-    // populateStaticData(table)
 }
 
 setupTable()
-var i=1;
+let i=1;
 function propulateActualData(table, invoices) {
 
     // sort invoices by date in descending order
@@ -21,18 +14,23 @@ function propulateActualData(table, invoices) {
 
     for(const invoice of invoices) {
 
+
         const { id, financeType, tag, invDt, amt } = invoice
-        const updatePageUrl = `./update-invoice.html?id=${id}`
-        const viewPageUrl = `./view-invoice.html?id=${id}`
+
+        // if (invDt !== '2023-03-24') {
+        //     continue;
+        // }
+
 
         const row = table.insertRow()
+
         row.insertCell(0).innerHTML = i++;
         row.insertCell(1).innerHTML = financeType
         row.insertCell(2).innerHTML = tag
         row.insertCell(3).innerHTML = invDt
         row.insertCell(4).innerHTML = amt
         row.insertCell(5).innerHTML = `
-            <a class='ms-2' onclick='showConfirmDeleteModal(${id})'>Delete</a>`
+            <a class='ms-2 btn-danger btn' onclick='showConfirmDeleteModal(${id})'>Delete</a>`
             if (financeType === 'INCOME') {
                 row.classList.add('income-row')
             } else if (financeType === 'EXPENSES') {
@@ -40,6 +38,7 @@ function propulateActualData(table, invoices) {
             }
     }
 }
+
 
 
 function showConfirmDeleteModal(id) {
@@ -81,3 +80,5 @@ function apiCallDeleteInvoice(id, modal) {
         .catch(console.log)
 
 }
+
+  

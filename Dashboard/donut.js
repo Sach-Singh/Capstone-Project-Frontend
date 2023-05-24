@@ -14,24 +14,42 @@ axios.all([
   // const totalIncome = income.reduce((acc, curr) => acc + curr, 0);
   // const totalExpenses = expenses.reduce((acc, curr) => acc + curr, 0);
 
-  const donutChart = new Chart('donut-chart', {
-    type: 'doughnut',
-    data: {
-      labels: ['Income', 'Expenses'],
-      datasets: [{
-        data: [income, expenses],
-        backgroundColor: ['#91e8d9', '#d75b5b'],
-        borderWidth: 1,
-        borderColor: 'black',
+//   const donutChart = new Chart('donut-chart', {
+//     type: 'doughnut',
+//     data: {
+//       labels: ['Income', 'Expenses'],
+//       datasets: [{
+//         data: [income, expenses],
+//         backgroundColor: ['#91e8d9', '#d75b5b'],
+//         borderWidth: 1,
+//         borderColor: 'black',
 
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false
+//       }]
+//     },
+//     options: {
+//       responsive: true,
+//       maintainAspectRatio: false
       
-    }
-  });
-})).catch(error => {
-  console.log('Error fetching data:', error);
-});
+//     }
+//   });
+// })).catch(error => {
+//   console.log('Error fetching data:', error);
+// });
+
+const pieChart = new Chart('pie-chart', {
+  type: 'pie',
+  data: {
+    labels: ['Income', 'Expenses'],
+    datasets: [{
+      data: [income, expenses],
+      backgroundColor: ['#53c653', '#d75b5b'],
+      borderWidth: 1,
+      borderColor: 'black',
+
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false
+  }
+});}))

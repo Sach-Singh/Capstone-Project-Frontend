@@ -2,28 +2,29 @@
 
 
 function setupTable() {
-    const table = document.getElementById('tableInvoice')
+    const table = document.getElementById('tableInvestment')
 
 
     apiFetchAllInvoices(table)
 }
 
 setupTable()
-let i=1;
+let j=1;
 function propulateActualData(table, invoices) {
     // Sort invoices by date in descending order
     invoices.sort((a, b) => new Date(b.invDt) - new Date(a.invDt));
   
-
   
     for (const invoice of invoices) {
       const { id, financeType, tag, invDt, amt } = invoice;
   
       // Check if the checkbox is checked
-
+      if (financeType !== 'INVESTMENT') {
+        continue; // Skip the row if it's not an investment and the checkbox is checked
+      }
   
       const row = table.insertRow();
-      row.insertCell(0).innerHTML = i++;
+      row.insertCell(0).innerHTML = j++;
       row.insertCell(1).innerHTML = financeType;
       row.insertCell(2).innerHTML = tag;
       row.insertCell(3).innerHTML = invDt;

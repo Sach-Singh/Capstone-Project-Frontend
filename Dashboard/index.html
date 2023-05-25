@@ -45,6 +45,9 @@
         <div class="modal-body">
           <div class="container">
             <h1>Finance App</h1>
+
+
+            
             <form id="finance-form" class="form-label form-group">
               <div class="row">
                 <div class="col-md-6">
@@ -53,6 +56,8 @@
                     <option value="">Select</option>
                     <option value="INCOME">Income</option>
                     <option value="EXPENSES">Expenses</option>
+                    <option value="INVESTMENT">Investment</option>
+
                   </select>
                 </div>
                 <div class="col-md-6">
@@ -65,7 +70,12 @@
                     <option value="Food" class="expenses-option">Food</option>
                     <option value="Rent" class="expenses-option">Rent</option>
                     <option value="Utilities" class="expenses-option">Utilities</option>
+                    <option value="other" id="otherOption">Other</option>
                   </select>
+                    <div id="inputContainer" style="display: none;">
+                      <input type="text" id="otherInput">
+                    </div>
+
                 </div>
               </div>
               <div class="row">
@@ -105,6 +115,8 @@
               Enter Finance
             </button>
 
+
+
             <button id="exportButton" class="btn btn-info btn-sm exampleModalLabel">
             <a href="javascript:demoFromHTML()" class="button">Download Pdf</a></button>
             <div id="content">
@@ -114,7 +126,7 @@
             <table class="table table-bordered table-container" id="tableInvoice">
               <thead>
                 <tr>
-                  <th> Sr no,</th>
+                  <th> Sr no.</th>
                   <th >Finance Type</th>
                   <th>Tag</th>
                   <th>Date</th>
@@ -126,7 +138,6 @@
               </tbody>
             </table>      
           </div>
-                <!-- </p> -->
         </div>
       <!-- Modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -159,7 +170,43 @@
       </div>
     </div>
 
+  `<h1>Hello there</h1>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-14">
+          <section class="grid">
+        <h1>Finances</h1>
+            
+  
+              <button type="button" class="btn btn-info btn-sm exampleModalLabel" data-toggle="modal" data-target="#myModal" >
+                Enter Finance
+              </button>
+  
+  
+  
+              <button id="exportButton" class="btn btn-info btn-sm exampleModalLabel">
+              <a href="javascript:demoFromHTML()" class="button">Download Pdf</a></button>
+              <div id="content">
+                  <!-- <p> -->
+  
+              <div class="row mt-3">
+              <table class="table table-bordered table-container" id="tableInvestment">
+                <thead>
+                  <tr>
+                    <th> Sr no.</th>
+                    <th >Finance Type</th>
+                    <th>Tag</th>
+                    <th>Date</th>
+                    <th>Amount(₹)</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>      
+            </div>
+          </div>
     
 
   </span>
@@ -172,6 +219,8 @@
   <script src="donut.js"></script>
   <script src="script.js"></script>
   <script src="financeEntry.js"></script>
+  <script src="investment.js"></script>
+
   <script>
     function demoFromHTML() {
         var pdf = new jsPDF('p', 'pt', 'a3');

@@ -1,19 +1,19 @@
-function setupTable() {
+function setupSavingsTable() {
     const table = document.getElementById('tableSavings')
 
 
-    apiFetchAllInvoices(table)
+    apiFetchAllSavings(table)
 }
 
-setupTable()
-let j=1;
-function propulateActualData(table, invoices) {
+setupSavingsTable()
+let k=1;
+function propulateSavingsData(table, invoices) {
     // Sort invoices by date in descending order
     invoices.sort((a, b) => new Date(b.invDt) - new Date(a.invDt));
   
   
     for (const invoice of invoices) {
-      const { id, financeType, tag, invDt, amt } = invoice;
+      const { id, category, goal, currAmt, target } = invoice;
   
     //   // Check if the checkbox is checked
     //   if (financeType !== 'INVESTMENT') {
@@ -21,30 +21,25 @@ function propulateActualData(table, invoices) {
     //   }
   
       const row = table.insertRow();
-      row.insertCell(0).innerHTML = j++;
-      row.insertCell(1).innerHTML = financeType;
-      row.insertCell(2).innerHTML = tag;
-      row.insertCell(3).innerHTML = invDt;
-      row.insertCell(4).innerHTML = amt;
+      row.insertCell(0).innerHTML = k++;
+      row.insertCell(1).innerHTML = category;
+      row.insertCell(2).innerHTML = goal;
+      row.insertCell(3).innerHTML = currAmt;
+      row.insertCell(4).innerHTML = target;
       row.insertCell(5).innerHTML = `<a class='ms-2 btn-danger btn' onclick='showConfirmDeleteModal(${id})'>Delete</a>`;
   
-      if (financeType === 'INCOME') {
-        row.classList.add('income-row');
-      } else if (financeType === 'EXPENSES') {
-        row.classList.add('expense-row');
-      }
     }
   }
   
 
-function apiFetchAllInvoices(table) {
-    axios.get('http://localhost:8080/savings/user-finances')
+function apiFetchAllSavings(table) {
+    axios.get('http://localhost:8080/savings/')
         .then(res => {
             const { data } = res
             console.log(data)  
             const { sts, msg, bd } = data
 
-            propulateActualData(table, bd)
+            propulateSavingsData(table, bd)
         })
         .catch(err => console.log(err))
 }
@@ -66,8 +61,8 @@ function showConfirmDeleteModal(id) {
 }
 
 
-function apiCallDeleteInvoice(id, modal) {
-    const url = `http://localhost:8080/savings/delete/${id}`
+function apiCallDeleteSavings(id, modal) {
+    const url = `http://localhost:8080/savings/${id}`
     location.reload();
 
     axios.delete(url)

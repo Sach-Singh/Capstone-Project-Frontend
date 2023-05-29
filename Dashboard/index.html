@@ -44,7 +44,7 @@
 				<!-- Modal body -->
         <div class="modal-body">
           <div class="container">
-            <h1>Finance App</h1>
+            <h1>Enter Finances</h1>
 
 
             
@@ -139,6 +139,9 @@
             </table>      
           </div>
         </div>
+      </div>
+      </div>
+    </div>
       <!-- Modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -173,28 +176,16 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-14">
+        <div class="col-sm-12">
           <section class="grid">
-        <h1>Investment</h1>
-            
-  
-              <button type="button" class="btn btn-info btn-sm exampleModalLabel" data-toggle="modal" data-target="#myModal" >
-                Enter Finance
-              </button>
-  
-  
-  
-              <button id="exportButton" class="btn btn-info btn-sm exampleModalLabel">
-              <a href="javascript:demoFromHTML()" class="button">Download Pdf</a></button>
-              <div id="content">
-                  <!-- <p> -->
-  
-              <div class="row mt-3">
-              <table class="table table-bordered table-container" id="tableInvestment">
+            <h1>Investment</h1>
+    
+            <div class="row mt-3">
+              <table class="table table-bordered table-container" id="InvestmentTable">
                 <thead>
                   <tr>
-                    <th> Sr no.</th>
-                    <th >Finance Type</th>
+                    <th>Sr no.</th>
+                    <th>Finance Type</th>
                     <th>Tag</th>
                     <th>Date</th>
                     <th>Amount(₹)</th>
@@ -202,11 +193,41 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <!-- Table body content goes here -->
                 </tbody>
-              </table>      
+              </table>
             </div>
-          </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    
 
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#SavingsModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
           <div class="container">
             <div class="row">
@@ -215,26 +236,20 @@
               <h1>Savings</h1>
                   
         
-                    <button type="button" class="btn btn-info btn-sm exampleModalLabel" data-toggle="modal" data-target="#myModal" >
-                      Enter Finance
+                    <button type="button" class="btn btn-info btn-sm exampleModalLabel" data-toggle="modal" data-target="#SavingsModal" >
+                      Enter Savings
                     </button>
         
-        
-        
-                    <button id="exportButton" class="btn btn-info btn-sm exampleModalLabel">
-                    <a href="javascript:demoFromHTML()" class="button">Download Pdf</a></button>
-                    <div id="content">
-                        <!-- <p> -->
         
                     <div class="row mt-3">
                     <table class="table table-bordered table-container" id="tableSavings">
                       <thead>
                         <tr>
                           <th> Sr no.</th>
-                          <th >Finance Type</th>
-                          <th>Tag</th>
-                          <th>Date</th>
-                          <th>Amount(₹)</th>
+                          <th >Category</th>
+                          <th>Total Amount</th>
+                          <th>Amount saved</th>
+                          <th>Target date(₹)</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -253,9 +268,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="donut.js"></script>
-  <script src="script.js"></script>
   <script src="financeEntry.js"></script>
-  <script src="investment.js"></script>
+    <script src="script.js"></script>
+  <script src="Savings.js"></script>
+
+  <!--<script src="Savings.js"></script> -->
 
   <script>
     function demoFromHTML() {

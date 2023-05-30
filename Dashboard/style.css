@@ -257,4 +257,23 @@ p {
   }
  
 
+  h1 {
+	text-align: center;
+  }
+  
+  form {
+	max-width: 400px;
+	margin: 0 auto;
+  }
+  
+  label,
+  input {
+	display: block;
+	margin-bottom: 10px;
+  }
+  
+  button {
+	display: block;
+	margin-top: 10px;
+  }
   
